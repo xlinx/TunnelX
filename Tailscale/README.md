@@ -12,16 +12,20 @@ sw_vers
 
 ```
 
-## macOS 10.14 go1.20 sdGod
+## macOS 10.14 
+### tailscale 1.44.3-ERR-BuildInfo 
+### go1.20 sdGod
 
 ```shell
 install tail on mac
 brew install go
 go install tailscale.com/cmd/tailscale{,d}@main
 
+go install tailscale.com/cmd/tailscale{,d}@v1.44.3
 
 ```
 ## macOS 11.52
+### go version go1.24.7 darwin/amd64
 
 ```shell
     softwareupdate --list
